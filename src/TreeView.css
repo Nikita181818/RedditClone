@@ -1,7 +1,7 @@
 
-  
+
    .tree-view {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Arial', sans-serif;
     font-size: 14px;
     background: #ffffff;
     padding: 20px;
@@ -10,6 +10,7 @@
     max-width: 700px;
     margin: 0 auto;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+    color: #1c2526;
   }
   
   .tree-node {
@@ -20,60 +21,75 @@
   
   .clickable-wrapper {
     position: relative;
-    padding-left: 30px;
+    padding-left: 40px;
     cursor: pointer;
   }
   
-  .clickable-wrapper::before {
-    content: "";
+  .curved-line {
     position: absolute;
     top: 0;
-    left: 10px;
+    left: -20px;
     width: 20px;
-    height: 100%;
-    border-left: 2px solid #ddd;
-    border-bottom: 2px solid #ddd;
+    height: calc(100% + 20px); /* Extended height to connect fully */
+    border-left: 2px solid #ccc;
+    border-bottom: 2px solid #ccc;
     border-bottom-left-radius: 10px;
+    cursor: pointer;
   }
   
-  .tree-node.last-child .clickable-wrapper::before {
-    height: 20px;
+  .curved-line:hover {
+    border-color: #999;
+  }
+  
+  .tree-node.last-child .curved-line {
+    height: 50%; /* Adjusted for last child */
+    border-bottom: none;
   }
   
   .node-label {
-    padding: 12px;
-    border-radius: 6px;
-    background-color: #f9f9f9;
-    border: 1px solid #e0e0e0;
-    transition: background 0.2s, box-shadow 0.2s;
-    position: relative;
+    display: flex;
+    align-items: flex-start;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #e1e8ed;
+    border-radius: 4px;
+    transition: background 0.2s;
   }
   
+  /* Disable expand/collapse on hover over content, keep default cursor */
   .node-label:hover {
-    background: #f0f0f0;
-    box-shadow: 0 0 6px rgba(0, 0, 0, 0.05);
+    background: #fff; /* No background change on hover */
+    cursor: default; /* Default cursor to avoid implying interactivity */
   }
   
   .arrow {
     display: inline-block;
     margin-right: 6px;
     font-size: 12px;
-    color: #999;
+    color: #657786;
+    margin-top: 2px;
+  }
+  
+  .profile-pic {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+    background: #ddd;
   }
   
   .username {
     font-weight: bold;
     color: #1a0dab;
+    margin-right: 5px;
+  }
+  
+  .comment-text {
+    color: #1c2526;
   }
   
   .children {
-    margin-left: 16px;
-    padding-left: 12px;
+    margin-left: 40px;
     margin-top: 10px;
     position: relative;
-  }
-
-  .clickable-wrapper:hover::before {
-    border-color: #999;
-    transition: border-color 0.2s ease;
   }
