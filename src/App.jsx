@@ -32,7 +32,7 @@ learn science,`,
                 replies: [
                   {
                     user: "Exciting_Redditor",
-                    text: `Not really. I didn’t say that either. I didn’t mention intelligence. I didn’t realise this was a controversial statement.`,
+                    text:"Not really. I didnt say that either. I didnt mention intelligence. I didnt realise this was a controversial statement.",
                     replies: [
                       {
                         user: "Carg_reducer",
@@ -44,7 +44,7 @@ wisdom is an unconditionally non scientific word.`,
                         replies: [
                           {
                             user: "Exciting_Redditor",
-                            text: `I didn’t say that though, you used the word wisdom. Not me.`,
+                            text: "I didn’t say that though, you used the word wisdom. Not me.",
                           },
                         ],
                       },
