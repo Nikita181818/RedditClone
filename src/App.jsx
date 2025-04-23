@@ -1,4 +1,5 @@
 
+
 import React from "react";
 import TreeView from "./TreeView";
 
@@ -44,19 +45,19 @@ wisdom is an unconditionally non scientific word.`,
                           {
                             user: "Exciting_Redditor",
                             text: `I didn’t say that though, you used the word wisdom. Not me.`,
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  }
+                          },
+                        ],
+                      },
+                    ],
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
 ];
 
 function App() {
