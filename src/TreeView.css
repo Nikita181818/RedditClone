@@ -1,5 +1,6 @@
-/* 
-  .tree-view {
+
+  
+   .tree-view {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 14px;
     background: #ffffff;
@@ -17,18 +18,29 @@
     position: relative;
   }
   
-  .tree-node::before {
-    content: '';
+  .clickable-wrapper {
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+  }
+  
+  .clickable-wrapper::before {
+    content: "";
     position: absolute;
     top: 0;
-    left: -10px;
-    width: 1px;
+    left: 10px;
+    width: 20px;
     height: 100%;
-    background-color: #ddd;
+    border-left: 2px solid #ddd;
+    border-bottom: 2px solid #ddd;
+    border-bottom-left-radius: 10px;
+  }
+  
+  .tree-node.last-child .clickable-wrapper::before {
+    height: 20px;
   }
   
   .node-label {
-    cursor: pointer;
     padding: 12px;
     border-radius: 6px;
     background-color: #f9f9f9;
@@ -56,74 +68,12 @@
   
   .children {
     margin-left: 16px;
-    border-left: 2px solid #eee;
     padding-left: 12px;
-    margin-top: 10px;
-  }
-   */
-
-
-   .tree-view {
-    font-family: 'IBM Plex Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 14px;
-    background: #ffffff;
-    padding: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    max-width: 700px;
-    margin: 0 auto;
-    color: #1c1c1c;
-  }
-  
-  .tree-node {
-    margin-left: 16px;
     margin-top: 10px;
     position: relative;
   }
-  
-  .tree-node::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -12px;
-    width: 2px;
-    height: 100%;
-    background-color: #e0e0e0;
+
+  .clickable-wrapper:hover::before {
+    border-color: #999;
+    transition: border-color 0.2s ease;
   }
-  
-  .node-label {
-    cursor: pointer;
-    padding: 8px 10px;
-    border-radius: 4px;
-    background-color: #f8f9fa;
-    border: 1px solid #e6e6e6;
-    transition: background 0.1s ease-in-out;
-    display: inline-block;
-    width: fit-content;
-  }
-  
-  .node-label:hover {
-    background-color: #f1f3f5;
-  }
-  
-  .arrow {
-    display: inline-block;
-    margin-right: 6px;
-    font-size: 13px;
-    color: #7c7c7c;
-    width: 1em;
-    text-align: center;
-  }
-  
-  .username {
-    font-weight: 500;
-    color: #0079d3; /* Reddit's blue for links/usernames */
-  }
-  
-  .children {
-    margin-left: 20px;
-    border-left: 2px solid #e8e8e8;
-    padding-left: 12px;
-    margin-top: 8px;
-  }
-  
