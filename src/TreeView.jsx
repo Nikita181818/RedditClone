@@ -10,13 +10,28 @@ const TreeNode = ({ node, isLast }) => {
     setExpanded(!expanded);
   };
 
+  const handleLineClick = (e) => {
+    e.stopPropagation(); // Prevent event bubbling to parent
+    console.log(`Line clicked for ${node.user}'s comment`);
+    toggleExpanded(); // Trigger expand/collapse on line click
+  };
+
   return (
     <div className={`tree-node ${isLast ? "last-child" : ""}`}>
-      <div className="clickable-wrapper" onClick={toggleExpanded}>
+
+      <div className="clickable-wrapper">
         <div className="node-label">
-          {hasChildren && <span className="arrow">{expanded ? "▼" : "▶"}</span>}
-          <span className="username">{node.user}</span>: {node.text}
+          {hasChildren && (
+            <span className="arrow" onClick={toggleExpanded}>{expanded ? "▼" : "▶"}</span>
+          )}
+          <img
+            src="https://i.redd.it/snoovatar/avatars/9a1e654c-04af-46f8-b13b-f11a3addf4e4.png"
+            alt={node.user}
+            className="profile-pic"
+          />
+          <span className="username">{node.user}</span>: <span className="comment-text">{node.text}</span>
         </div>
+        {hasChildren && <div className="curved-line" onClick={handleLineClick}></div>}
       </div>
 
       {hasChildren && expanded && (
@@ -49,5 +64,3 @@ const TreeView = ({ data }) => {
 };
 
 export default TreeView;
-
-
